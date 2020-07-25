@@ -10,9 +10,6 @@ module.exports = {
     host: 'localhost',
     port: 4001
   },
-  googleMap: {
-    key: 'AIzaSyDQTcWSQydeBaYb2Sihh5jAixtVzvqew3E'
-  },
   api: {
     host: 'http://yolobus.com',
     scheme: 'https',
