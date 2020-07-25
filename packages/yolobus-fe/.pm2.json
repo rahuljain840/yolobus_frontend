@@ -1,0 +1,18 @@
+{
+  "apps": [
+    {
+      "name": "YoloBus",
+      "script": "./index.js",
+      "instances": 2,
+      "exec_mode": "cluster",
+      "watch":  false,
+      "env": {
+        "NODE_PATH": "./app",
+        "NODE_ENV": "production"
+      },
+      "max_memory_restart": "800M",
+      "listen_timeout": 20000,
+      "combine_logs": true
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="21px" viewBox="0 0 16 21" version="1.1"
+     xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 43.1 (39012) - http://www.bohemiancoding.com/sketch -->
+    <title>Marker_icon</title>
+    <desc>Created with Sketch.</desc>
+    <defs/>
+    <g id="Welcome" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Search_destination" transform="translate(-20.000000, -89.000000)">
+            <g id="Search">
+                <g id="Group-5" transform="translate(0.000000, 76.000000)">
+                    <g id="Marker_icon" transform="translate(16.000000, 12.000000)">
+                        <rect id="Rectangle-9" x="0" y="0" width="24" height="24"/>
+                        <g id="Page-1" transform="translate(5.000000, 2.000000)">
+                            <path d="M14.1377931,7.24117241 C14.1377931,12.6446207 7.25227586,19.7618621 7.25227586,19.7618621 C7.25227586,19.7618621 0.344689655,12.6446207 0.344689655,7.24117241 C0.344689655,3.43289655 3.43296552,0.34462069 7.24124138,0.34462069 C11.0502069,0.34462069 14.1377931,3.43289655 14.1377931,7.24117241 Z" id="Stroke-1" stroke="#000000" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M9.3102069,5.93462069 C9.3102069,7.07737931 8.384,8.00358621 7.24124138,8.00358621 C6.09848276,8.00358621 5.17227586,7.07737931 5.17227586,5.93462069 C5.17227586,4.79186207 6.09848276,3.86565517 7.24124138,3.86565517 C8.384,3.86565517 9.3102069,4.79186207 9.3102069,5.93462069" id="Fill-3" fill="#009688"/>
+                            <path d="M9.3102069,5.93462069 C9.3102069,7.07737931 8.384,8.00358621 7.24124138,8.00358621 C6.09848276,8.00358621 5.17227586,7.07737931 5.17227586,5.93462069 C5.17227586,4.79186207 6.09848276,3.86565517 7.24124138,3.86565517 C8.384,3.86565517 9.3102069,4.79186207 9.3102069,5.93462069 Z" id="Stroke-5" stroke="#000000" stroke-linecap="round" stroke-linejoin="round"/>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,69 @@
+{
+  "name": "@rahuljain840/utils",
+  "version": "0.0.6",
+  "description": "",
+  "main": "./src/index.js",
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@github.com/rahuljain840/lerna_boilerplate.git",
+    "directory": "packages/tt-utils"
+  },
+  "scripts": {
+    "build": "yarn build:cjs && yarn build:esm && yarn build:es && yarn build:copy-files",
+    "build:cjs": "cross-env NODE_ENV=production BABEL_ENV=cjs babel --config-file ../../babel.config.js ./src --out-dir ./dist --ignore \"**/*.test.js\"",
+    "build:esm": "cross-env NODE_ENV=production BABEL_ENV=esm babel --config-file ../../babel.config.js ./src --out-dir ./dist/esm --ignore \"**/*.test.js\"",
+    "build:es": "echo 'skip es folder'",
+    "build:copy-files": "node ../../scripts/copy-files.js",
+    "start": "node webpack/webpack-dev-server.js --inline --content-base dist/",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.9.6",
+    "@babel/node": "^7.8.7",
+    "@babel/plugin-proposal-class-properties": "^7.8.3",
+    "@babel/plugin-proposal-object-rest-spread": "^7.9.6",
+    "@babel/plugin-transform-object-assign": "^7.8.3",
+    "@babel/plugin-transform-react-constant-elements": "^7.9.0",
+    "@babel/plugin-transform-runtime": "^7.9.6",
+    "@babel/preset-env": "^7.9.6",
+    "@babel/preset-react": "^7.9.4",
+    "@babel/register": "^7.9.0",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-eslint": "^10.0.3",
+    "babel-loader": "^8.0.0",
+    "babel-plugin-istanbul": "^6.0.0",
+    "babel-plugin-module-resolver": "^4.0.0",
+    "babel-plugin-optimize-clsx": "^2.3.0",
+    "babel-plugin-react-remove-properties": "^0.3.0",
+    "babel-plugin-tester": "^9.0.0",
+    "babel-plugin-transform-dev-warning": "^0.1.0",
+    "babel-plugin-transform-react-remove-prop-types": "^0.4.21",
+    "babel-polyfill": "6.26.0",
+    "cross-env": "^7.0.0",
+    "css-loader": "0.28.9",
+    "eslint": "^3.19.0",
+    "eslint-config-airbnb": "^15.0.1",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^5.0.1",
+    "eslint-plugin-react": "^7.0.1",
+    "node-sass": "^4.7.2",
+    "sass-loader": "6.0.6",
+    "style-loader": "0.16.1",
+    "superagent": "3.5.2",
+    "uglifyjs-webpack-plugin": "1.2.7"
+  },
+  "peerDependencies": {
+    "prop-types": "15.7.2",
+    "react": "16.12.0",
+    "react-dom": "16.12.0",
+    "superagent": "3.5.2"
+  },
+  "publishConfig": {
+    "directory": "dist"
+  },
+  "gitHead": "b0afc549f4ab4005df4ef2afdb2ac7373bad2525"
+}
