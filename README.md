@@ -33,7 +33,7 @@ npm install --global lerna
 Once these pre-requisites are met, feel free to clone the repo locally and install the required dependencies:
 
 ```bash
-git clone git@github.com:rahuljain840/lerna_boilerplate.git && cd lerna_boilerplate
+git clone https://github.com/rahuljain840/yolobus_frontend.git && cd yolobus_frontend
 ```
 
 Run the following command to install all the dependencies (including the symbolic links).
