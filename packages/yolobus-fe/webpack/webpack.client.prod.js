@@ -9,6 +9,7 @@ const AssetsPlugin = require('assets-webpack-plugin');
 const SpriteLoaderPlugin = require('svg-sprite-loader/plugin');
 const WorkboxPlugin = require('workbox-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+// const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 const { appPaths } = require('./webpack.config');
 

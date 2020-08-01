@@ -5,6 +5,8 @@ const glob = require('glob');
 
 const packagePath = process.cwd();
 const buildPath = path.join(packagePath, './dist');
+const esBuildPath = path.join(packagePath, './dist/es');
+const esmBuildPath = path.join(packagePath, './dist/esm');
 const srcPath = path.join(packagePath, './src');
 
 async function includeFileInBuild(file) {
@@ -50,6 +52,17 @@ async function createModulePackages({ from, to }) {
   );
 }
 
+async function scssCopy({ from, to }) {
+  if (!(await fse.exists(to))) {
+    console.warn(`path ${to} does not exists`);
+    return [];
+  }
+
+  const files = glob.sync('**/*.scss', { cwd: from });
+  const cmds = files.map((file) => fse.copy(path.resolve(from, file), path.resolve(to, file)));
+  return Promise.all(cmds);
+}
+
 async function typescriptCopy({ from, to }) {
   if (!(await fse.exists(to))) {
     console.warn(`path ${to} does not exists`);
@@ -87,7 +100,7 @@ async function prepend(file, string) {
 }
 
 async function addLicense(packageData) {
-  const license = `/** @license Material-UI v${packageData.version}
+  const license = `/** @license YoloBus v${packageData.version}
  *
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
@@ -97,8 +110,6 @@ async function addLicense(packageData) {
     [
       './index.js',
       './esm/index.js',
-      './umd/material-ui.development.js',
-      './umd/material-ui.production.min.js',
     ].map(async (file) => {
       try {
         await prepend(path.resolve(buildPath, file), license);
@@ -120,7 +131,7 @@ async function run() {
     await Promise.all(
       [
         // use enhanced readme from workspace root for `@material-ui/core`
-        packageData.name === '@material-ui/core' ? '../../README.md' : './README.md',
+        './README.md',
         '../../CHANGELOG.md',
         '../../LICENSE',
       ].map((file) => includeFileInBuild(file)),
@@ -128,8 +139,13 @@ async function run() {
 
     await addLicense(packageData);
 
+    // Scss
+    await scssCopy({ from: srcPath, to: buildPath });
+    await scssCopy({ from: srcPath, to: esBuildPath });
+    await scssCopy({ from: srcPath, to: esmBuildPath });
+
     // TypeScript
-    await typescriptCopy({ from: srcPath, to: buildPath });
+    // await typescriptCopy({ from: srcPath, to: buildPath });
 
     // await createModulePackages({ from: srcPath, to: buildPath });
   } catch (err) {

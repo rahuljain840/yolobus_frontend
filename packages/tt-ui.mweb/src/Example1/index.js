@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import styled from '@emotion/styled'
 
 import CalendarIcon from '@rahuljain840/icons/CalendarIcon';
-import './Example.scss';
 
 const Button = styled.button({
   padding: '32px',
@@ -23,7 +22,6 @@ class Example extends Component {
       <div>
         <CalendarIcon height="25px" width="25px"/>
         <Button>Example</Button>
-        <button className="button">Example</button>
       </div>
     );
   }
